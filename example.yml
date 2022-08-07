@@ -24,3 +24,60 @@ comments: >                     # > read as just one line
     Late afternoon is best.
     Backup contact is Nancy
     Billsmer @ 17298-3829.
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# creating an array
+numbers:
+      - one
+      - two
+      - three
+
+
+numbers: [one, two, three] # creating a list as inline version
+
+{
+  "numbers": [
+    "one",
+    "two",                      # creating a list as json
+    "three"
+  ]
+}     
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+
+author: &jPaul # use mark node anchors to - use ampersand anchor
+    name: James
+    last-name: Paul
+
+
+
+# list of books 
+books: 
+    - 1923:
+        author: *jPaul             # pass the name of the author via reference
+    - My Biography:
+        author: *jPaul             # pass the name of the author via reference
+
+
+{
+  "author": {                      # represented as json
+    "name": "James",
+    "last-name": "Paul"
+  },
+
+  "books": [
+    {
+      "1923": {
+        "name": "James",
+        "last-name": Paul
+      }
+    },
+    {
+      "My Biography": {
+        "name": "James",
+        "last-name": Paul
+      }
+
+    }
+  ]
+}                         
